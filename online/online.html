@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../images/logo.png">
+    <title>Dürig's Tomb</title>
+    <link rel="stylesheet" href="../game.css">
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+    <script src="./online.js" defer></script>
+    <script src="../audio.js" defer></script>
+</head>
+<body>
+    <audio id="backgroundAudio">
+        <source src="../audio/music.mp3" type="audio/mpeg">
+      </audio>
+      <audio id="clickAudio">
+        <source src="../audio/click.mp3" type="audio/mpeg">
+      </audio>
+    <div id="starterPrompt" class="prompt">
+        Welcome, Adventurer! You have been sent by the Queen of Polveria to find the <i>Sacred Sabre</i> in <b>Dürig's Tomb!</b>
+        Beware of the evil forces of the King of Klaimodia who are also after the Sabre! Good luck, Adventurer!<br>
+        <button id="startButton">Press to start!</button> 
+    </div>
+
+    <div class="levelCompletedPrompt">
+        Level completed!<br>
+        One of the bandits had a note on him that reads:<br>
+        <i>After dealing with the pesky Adventurer go to the <b>Sloriye Woods</b>, we found a clue that could lead to <b>Dürig's Tomb</b>!<br>
+        --the King</i><br>
+        <button class="nextLevelButton">Sloriye Woods</button>
+    </div>
+
+    <div class="levelCompletedPrompt">
+        The King and his men flee from the woods and back to <b>Nundir Castle</b>!<br>
+        The King has in his possession the key to <b>Dürig's Tomb</b>! 
+        <button class="nextLevelButton">Nundir Castle</button>
+    </div>
+
+    <div class="levelCompletedPrompt">
+        As you deal with the King's guards, he unfortutely manages to slip away!<br>
+        Quick follow him to <b>Dürig's Tomb</b> and stop his evil plot!
+        <button class="nextLevelButton">Dürig's Tomb</button>
+    </div>
+    <div class="levelCompletedPrompt">
+        You defeated the King and the evil Dürig! You win!
+        <button class="nextLevelButton">Play Again</button>
+    </div>
+
+    <div id="gameOverPrompt" class="prompt">
+    </div>
+
+    
+    <div id="display">
+        <canvas width="1200" height="500" id="canvas"></canvas>
+    </div>
+    
+    <div id="topPanel">
+        <h1 id="levelHeading">Level 1: Everdeen Plains</h1>
+        <div id="controls">Controls
+            <div id="helpBox">
+                <table id="helpTable">
+                    <tr>
+                        <th>w</th>
+                        <td>Up</td>
+                    </tr>
+                    <tr>
+                        <th>s</th>
+                        <td>Down</td>
+                    </tr>
+                    <tr>
+                        <th>d</th>
+                        <td>Right</td>
+                    </tr>
+                    <tr>
+                        <th>a</th>
+                        <td>Left</td>
+                    </tr>
+                    <tr>
+                        <th>k</th>
+                        <td>Attack</td>
+                    </tr>
+                    <tr>
+                        <th>l</th>
+                        <td>Ability</td>
+                    </tr>
+                    <tr>
+                        <th>1-5</th>
+                        <td>Inventory Slots</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="menu">
+            <button id="pauseButton">Pause</button>
+            <button id="resumeButton">Unpause</button>
+            <button id="quitButton">Quit</button>
+            <button id="saveAndQuitButton">Save and Quit</button>
+        </div>
+    </div>
+
+    
+    <div id="bottomPanel">
+        <div id="inventory">
+            <p style="font-size: larger; text-decoration: underline; font-weight: bold;">Inventory</p>
+            <table id="inventoryTable">
+                <tr>
+                    <td id="slot1" class="slot"><img src="../images/blank.png" width="50" height="50"></td>
+                    <td id="slot2" class="slot"><img src="../images/blank.png" width="50" height="50"></td>
+                    <td id="slot3" class="slot"><img src="../images/blank.png" width="50" height="50"></td>
+                    <td id="slot4" class="slot"><img src="../images/blank.png" width="50" height="50"></td>
+                    <td id="slot5" class="slot"><img src="../images/blank.png" width="50" height="50"></td>
+                </tr>
+            </table>
+        </div>
+        <div id="stats">
+            <p style="font-size: larger; text-decoration: underline; font-weight: bold;">Stats:</p>
+            <div id="statsBox">
+                <p id="HPDisplay">HP:</p>
+                <p id="ScoreDisplay">Score:</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./images/logo.png" />
+    <link rel="stylesheet" href="./game.css">
+    <link rel="stylesheet" href="./index.css">
+    <script src="./audio.js" defer></script>
+    
+    <title>Dürig's Tomb</title>
+  </head>
+  <body>
+    <audio id="backgroundAudio">
+      <source src="./audio/music.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="clickAudio">
+      <source src="./audio/click.mp3" type="audio/mpeg">
+    </audio>
+    <h1>Welcome to <b>Dürig's Tomb</b>!</h1>
+    <div id="gameModeSelection">
+      <button id="storyModeButton" class="modeButton hidden">Story Mode</button>
+      <button id="playgroundModeButton" class="modeButton hidden">
+        Playground
+      </button>
+      <button id="loadGame" class="modeButton hidden">Load Game</button>
+    </div>
+
+    <script>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          console.log(entry);
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          } else {
+            entry.target.classList.remove("show");
+          }
+        });
+      });
+
+      const hiddenElements = document.querySelectorAll(".hidden");
+      hiddenElements.forEach((element) => observer.observe(element));
+
+      if (!localStorage.getItem("gameState")) {
+        document.querySelector("#loadGame").style = "display: none";
+      }
+
+      document.querySelector("#storyModeButton").onclick = () => {
+        localStorage.clear();
+        sessionStorage.setItem("gameMode", "story");
+        location.href = "./character_creation/char_creation.html";
+      };
+      document.querySelector("#playgroundModeButton").onclick = () => {
+        localStorage.clear();
+        sessionStorage.setItem("gameMode", "playground");
+        location.href = "./character_creation/char_creation.html";
+      };
+      document.querySelector("#loadGame").onclick = () => {
+        let gameType = JSON.parse(localStorage["gameState"]).gameType;
+        location.href = `./${gameType}/${gameType}.html`;
+      };
+    </script>
+  </body>
+</html>

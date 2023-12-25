@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css?family=Alkalami");
+
+.prompt {
+    position: absolute;
+    top: 110px;
+    left: 185px;
+    padding: 30px;
+    width: 800px;
+    height: 300px;
+    background: gold;
+    border: outset black 1px;
+    border-radius: 5%;
+    z-index: 2;
+    text-align: center;
+    font-size: 32px;
+}
+
+.levelCompletedPrompt {
+    position: absolute;
+    top: 110px;
+    left: 185px;
+    padding: 10px;
+    width: 870px;
+    height: 300px;
+    background: gold;
+    border: outset black 1px;
+    border-radius: 5%;
+    z-index: 2;
+    text-align: center;
+    font-size: 25px;
+    display: none;
+}
+
+#gameOverPrompt {
+    display: none;
+}
+
+html {
+    background: url("./images/plains.png") no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+
+div#topPanel {
+    overflow: visible;
+    position: absolute;
+    top: 0;
+    left: 50px;
+    z-index: 500;
+}
+
+div#bottomPanel {
+    position: absolute;
+    z-index: 500;
+    background-color: rgba(232, 232, 177, 0.8);
+    top: 570px;
+    left: 100px;
+    width: 1000px;
+    border: 5px solid goldenrod;
+    border-bottom: none;
+    border-radius: 10%;
+    padding: 15px;
+    padding-left: 100px;
+}
+
+div#inventory {
+    position: relative;
+    left: 350px;
+}
+
+div#stats {
+    position: relative;
+    top: -165px;
+}
+
+canvas {
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    border: 0px black solid;
+    z-index: 1;
+    cursor: none;
+}
+
+#inventoryTable {
+    border-collapse: collapse;
+}
+
+.slot {
+    border: 5px outset brown;
+    padding: 10px;
+}
+
+#statsBox {
+    width: 100px;
+    padding-left: 10px;
+}
+
+h1#levelHeading {
+    position: relative;
+    top: 5px;
+    left: 400px;
+}
+
+#controls {
+    overflow: visible;
+    position: relative;
+    top: -90px;
+    font-weight: bold;
+    text-align: center;
+    background-color: whitesmoke;
+    border: 1px solid black;
+    border-radius: 5%;
+    width: 100px;
+}
+
+#controls:hover {
+    background-color: rgba(240, 248, 255, 0);
+    border: none;
+}
+
+#controls:hover #helpBox {
+    overflow-x: visible;
+    top: auto;
+    left: auto;
+    display: inline-block;
+    z-index: 1;
+}
+
+#helpBox {
+    overflow-x: visible;
+    position: relative;
+    display: none;
+    top: 40px;
+    left: 100px;
+    background-color: white;
+}
+
+#helpTable {
+    border-collapse: collapse;
+    border: 5px solid black;
+}
+
+#helpTable tr > * {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
+#helpTable th {
+    font-weight: bold;
+}
+
+#menu {
+    position: absolute;
+    top: 15px;
+    left: 1100px;
+    width: 100px;
+}
+
+#menu > * {
+    position: relative;
+    width: 100px;
+    font-weight: bold;
+}
+
+#menu #resumeButton {
+    display: none;
+}
+
+#menu #quitButton {
+    display: none;
+}
+
+#menu #saveAndQuitButton {
+    display: none;
+}
+
+* {
+    font-family: "Alkalami";
+    overflow: hidden;
+    cursor: url('./images/cursor.png'), auto;
+}
+

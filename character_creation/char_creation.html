@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../images/logo.png">
+    <link rel="stylesheet" href="./char_creation.css">
+    <script src="../audio.js" defer></script>
+    <script src="./char_creation.js"></script>
+    <title>Character Selection</title>
+</head>
+<body>
+    <audio id="backgroundAudio">
+        <source src="../audio/music.mp3" type="audio/mpeg">
+      </audio>
+      <audio id="clickAudio">
+        <source src="../audio/click.mp3" type="audio/mpeg">
+      </audio>
+    <h1>Pick your character!</h1>
+    <div id="blurDiv"></div>
+    <div id="character_selection">
+        <div class="char_option">
+            <div id="knight" class="whatTypeIsThis">
+                <img src="../images/knight.png" alt="" width="75px" height="75px">
+            </div>
+        </div>
+        <div class="char_option">
+            <div id="archer" class="whatTypeIsThis">
+                <img src="../images/archer.png" alt="" width="75px" height="75px">
+            </div>
+        </div>
+        <div class="char_option">
+            <div id="wizard" class="whatTypeIsThis">
+                <img src="../images/wizard.png" alt="" width="75px" height="75px">
+            </div>
+        </div>
+        <div class="char_option">
+            <div id="warriorPrincess" class="whatTypeIsThis">
+                <img src="../images/warriorPrincess.png" alt="" width="75px" height="75px">
+            </div>
+        </div>
+        <div id="buttonsDiv">
+            <button id="prevChar"><</button>
+            <button id="selectButton">Select character</button>
+            <button id="nextChar">></button>
+        </div>
+        <div id="charDescriptionId">
+            <div class="hidden" id="knightDescription">
+                <p>HP: 15</p>
+                <p>Attack Damage: 2</p>
+                <p>Attack Speed: 600ms</p>
+                <p>Speed: 15</p>
+                <p>Ability: Shield
+                   <img src="../images/info_icon.png" alt="" class="infoImg">
+                   <p id="shieldInfo" class="hidden">Protects from all damage in the next 5s. Recharge time is 10s.</p>
+                </p>
+            </div>
+            <div class="hidden" id="archerDescription">
+                <p>HP: 12</p>
+                <p>Attack Damage: 1</p>
+                <p>Attack Speed: 800ms</p>
+                <p>Speed: 15</p>
+                <p>Ability: Tripleshot
+                   <img src="../images/info_icon.png" alt="" class="infoImg">
+                   <p id="tripleShotInfo" class="hidden">
+                    You fire 3 arrows simultaneously! Recharge time is 3s.
+                   </p>
+                </p>
+            </div>
+            <div class="hidden" id="wizardDescription">
+                <p>HP: 10</p>
+                <p>Attack Damage: 1</p>
+                <p>Attack Speed: 700ms</p>
+                <p>Speed: 15</p>
+                <p>Ability: Wildfire
+                   <img src="../images/info_icon.png" alt="" class="infoImg">
+                   <p id="wildfireInfo" class="hidden">
+                    Your fire an explosive ball of fire that sets the area on fire! The area of effect has a radius of 80
+                    and does 1 damage per second for 5s. Recharge time is 2s.
+                   </p>
+                </p>
+            </div>
+            <div class="hidden" id="warriorPrincessDescription">
+                <p>HP: 12</p>
+                <p>Attack Damage: 1</p>
+                <p>Attack Speed: 400ms</p>
+                <p>Speed: 15</p>
+                <p>Ability: Goddess
+                   <img src="../images/info_icon.png" alt="" class="infoImg">
+                   <p id="goddessInfo" class="hidden">
+                    You harness divine powers for 5 seconds! In that duration you gain the following benefits: Attack Damage +1, Attack Speed -150ms, Speed +5. Recharge time is 3s.
+                   </p>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

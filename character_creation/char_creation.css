@@ -1,0 +1,123 @@
+html {
+    background: url("../images/indexBackground.png") no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+
+#character_selection {
+    position: absolute;
+    top: 20rem;
+    left: 28rem;
+}
+
+#blurDiv {
+    position: absolute;
+    top: 15rem;
+    left: 23rem;
+    width: 600px;
+    height: 300px;
+    border: 1px solid black;
+    background: rgb(3, 180, 211);
+    opacity: 0.7;
+}
+
+#character_selection > * {
+    display: inline-block;
+}
+
+#selected > div.whatTypeIsThis {
+    border-bottom: 5px gold solid;
+    padding-bottom: 48px;
+    transform: translateY(-50px);
+    transition: all 1s;
+}
+
+.whatTypeIsThis {
+    width: 75px;
+    height: 75px;
+    margin-left: 2rem;
+
+    transform: translateY(0px);
+}
+
+#buttonsDiv {
+    position: relative;
+    top: 5rem;
+    right: 18.5rem;
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: inline-block;
+}
+
+#charDescriptionId {
+    position: absolute;
+    top: 13rem;
+    right: 8rem;
+    width: 20rem;
+    height: 12rem;
+    padding: 5rem;
+    padding-top:  2rem;
+    padding-bottom: 0rem;
+    background: url("../images/empty_parchment.png") center center no-repeat;
+    font-size: small;
+    background-size: 20rem;
+    line-height: 150%;
+}
+
+#charDescriptionId > * {
+    padding-left: 5rem;
+}
+
+#shieldInfo {
+    position: absolute;
+    top: 3rem;
+    left: 15rem;
+    width: 10rem;
+    padding: 1rem;
+    background-color: rgb(255, 252, 60);
+    border: 1px solid red;
+    text-align: center;
+}
+
+#tripleShotInfo {
+    position: absolute;
+    top: 2rem;
+    left: 15rem;
+    width: 10rem;
+    padding: 1rem;
+    background-color: rgb(255, 252, 60);
+    border: 1px solid red;
+    text-align: center;
+}
+
+#wildfireInfo {
+    position: absolute;
+    top: -1rem;
+    left: 15rem;
+    width: 10rem;
+    padding: 1rem;
+    background-color: rgb(255, 252, 60);
+    border: 1px solid red;
+    text-align: center;
+}
+
+#goddessInfo {
+    position: absolute;
+    top: -1rem;
+    left: 15rem;
+    width: 10rem;
+    padding: 1rem;
+    background-color: rgb(255, 252, 60);
+    border: 1px solid red;
+    text-align: center;
+}
+
+* {
+    cursor: url('../images/cursor.png'), auto;
+}
